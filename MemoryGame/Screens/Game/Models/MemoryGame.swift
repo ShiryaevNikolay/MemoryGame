@@ -27,7 +27,7 @@ struct MemoryGame<CardContent> {
     }
     
     struct Card: Identifiable {
-        var isFaceUp: Bool = true
+        var isFaceUp: Bool = false
         var isMatched: Bool = false
         var content: CardContent
         var id: Int

@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// Экран с картами
 struct MemoryGameScreenView: View {
     var viewModel: EmojiMemoryGame
     var body: some View {
@@ -39,24 +40,6 @@ struct CardsView: View {
             .padding()
             .foregroundColor(Color.gray)
             .font(Font.largeTitle)
-    }
-}
-
-// Отображает карту
-struct CardView: View {
-    var card: MemoryGame<String>.Card
-    var body: some View {
-        ZStack {
-            if card.isFaceUp {
-                RoundedRectangle(cornerRadius: 10.0)
-                    .fill(Color.white)
-                    .shadow(radius: 4.0)
-                Text(card.content)
-            } else {
-                RoundedRectangle(cornerRadius: 10.0).fill()
-                Text("❔")
-            }
-        }
     }
 }
 
