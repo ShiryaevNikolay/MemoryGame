@@ -46,6 +46,6 @@ struct CardsView: View {
 // Preview
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        MemoryGameScreenView(viewModel: EmojiMemoryGame())
+        MemoryGameScreenView(viewModel: EmojiMemoryGame(numberOfPairsOfCards: 3))
     }
 }

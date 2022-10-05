@@ -11,14 +11,24 @@ import Foundation
 class EmojiMemoryGame {
     // Иммет смысл написать typealias для MemoryGame<String>
     
-    private var model: MemoryGame<String> = EmojiMemoryGame.createMemoryGame()
+    init(numberOfPairsOfCards: Int) {
+        model = EmojiMemoryGame.createMemoryGame(numberOfPairsOfCards: numberOfPairsOfCards)
+    }
     
-    static func createMemoryGame() -> MemoryGame<String> {
-        let emojis = ["👾", "🚕", "🩼"]
-        return MemoryGame<String>(numberOfPairOfCards: emojis.count) { pairIndex in
-            return emojis[pairIndex]
+    static func createMemoryGame(numberOfPairsOfCards: Int) -> MemoryGame<String> {
+        let emojis = [
+            "🩼", "🚲", "🗿", "💻", "🧲", "⚔️",
+            "🛠", "🦠", "🔊", "🍑", "🍌", "🥥",
+            "🍕", "🌮", "🍔", "🍊", "🏓", "🎮",
+            "✈️", "🗺", "🏩", "⛩", "💾", "💸"
+        ]
+        let randomEmojis = emojis.shuffled().prefix(numberOfPairsOfCards)
+        return MemoryGame<String>(numberOfPairOfCards: numberOfPairsOfCards) { pairIndex in
+            return randomEmojis[pairIndex]
         }
     }
+    
+    private var model: MemoryGame<String>
     
     // MARK: - Access to the Model
     
