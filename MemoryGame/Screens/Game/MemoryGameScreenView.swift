@@ -30,16 +30,25 @@ struct CardsView: View {
     var cards: Array<MemoryGame<String>.Card>
     var onTapCard: (MemoryGame<String>.Card) -> Void
     var body: some View {
-        HStack {
-            ForEach(cards) { card in
-                CardView(card: card).onTapGesture {
-                    onTapCard(card)
+        
+        let columns = Array(
+            repeating: GridItem(.flexible(), spacing: 20),
+            count: 3
+        )
+        
+        return ScrollView {
+            LazyVGrid(columns: columns, spacing: 20) {
+                ForEach(cards) { card in
+                    CardView(card: card)
+                    .onTapGesture {
+                        onTapCard(card)
+                    }
                 }
             }
-        }
             .padding()
             .foregroundColor(Color.gray)
             .font(Font.largeTitle)
+        }
     }
 }
 
