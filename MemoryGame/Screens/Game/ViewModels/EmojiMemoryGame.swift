@@ -11,24 +11,24 @@ import Foundation
 class EmojiMemoryGame {
     // Иммет смысл написать typealias для MemoryGame<String>
     
-    init(numberOfPairsOfCards: Int) {
-        model = EmojiMemoryGame.createMemoryGame(numberOfPairsOfCards: numberOfPairsOfCards)
+    init() {
+        model = EmojiMemoryGame.createMemoryGame()
     }
     
-    static func createMemoryGame(numberOfPairsOfCards: Int) -> MemoryGame<String> {
-        let emojis = [
-            "🩼", "🚲", "🗿", "💻", "🧲", "⚔️",
-            "🛠", "🦠", "🔊", "🍑", "🍌", "🥥",
-            "🍕", "🌮", "🍔", "🍊", "🏓", "🎮",
-            "✈️", "🗺", "🏩", "⛩", "💾", "💸"
-        ]
+    private static let emojis = [
+        "🩼", "🚲", "🗿", "💻", "🧲", "⚔️",
+        "🛠", "🦠", "🔊", "🍑", "🍌", "🥥",
+        "🍕", "🌮", "🍔", "🍊", "🏓", "🎮",
+        "✈️", "🗺", "🏩", "⛩", "💾", "💸"
+    ]
+    private var model: MemoryGame<String>
+    
+    private static func createMemoryGame(numberOfPairsOfCards: Int = Int.random(in: 2...5)) -> MemoryGame<String> {
         let randomEmojis = emojis.shuffled().prefix(numberOfPairsOfCards)
         return MemoryGame<String>(numberOfPairOfCards: numberOfPairsOfCards) { pairIndex in
             return randomEmojis[pairIndex]
         }
     }
-    
-    private var model: MemoryGame<String>
     
     // MARK: - Access to the Model
     
@@ -40,5 +40,14 @@ class EmojiMemoryGame {
     
     func choose(card: MemoryGame<String>.Card) {
         model.choose(card: card)
+    }
+    
+    func newGame() {
+        model = EmojiMemoryGame.createMemoryGame()
+    }
+    
+    func shuffleCards() {
+        // TODO: по идее нужно вызывать метод из model
+        model.cards.shuffle()
     }
 }

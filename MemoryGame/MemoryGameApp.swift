@@ -11,7 +11,7 @@ import SwiftUI
 struct MemoryGameApp: App {
     var body: some Scene {
         WindowGroup {
-            let game = EmojiMemoryGame(numberOfPairsOfCards: 3)
+            let game = EmojiMemoryGame()
             MemoryGameScreenView(viewModel: game)
         }
     }

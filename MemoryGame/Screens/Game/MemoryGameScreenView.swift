@@ -15,10 +15,10 @@ struct MemoryGameScreenView: View {
             CardsView(cards: viewModel.cards) { card in viewModel.choose(card: card) }
             HStack {
                 ButtonView(text: "Новая игра") {
-                    
+                    viewModel.newGame()
                 }
                 ButtonView(text: "Перемешать карты") {
-                    
+                    viewModel.shuffleCards()
                 }
             }
         }
@@ -55,6 +55,6 @@ struct CardsView: View {
 // Preview
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        MemoryGameScreenView(viewModel: EmojiMemoryGame(numberOfPairsOfCards: 3))
+        MemoryGameScreenView(viewModel: EmojiMemoryGame())
     }
 }
