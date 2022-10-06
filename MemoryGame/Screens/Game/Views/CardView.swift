@@ -15,10 +15,14 @@ struct CardView: View {
             if card.isFaceUp {
                 RoundedRectangle(cornerRadius: 10.0)
                     .fill(Color.white)
+                    .aspectRatio(1.0, contentMode: .fit)
                     .shadow(radius: 4.0)
                 Text(card.content)
             } else {
-                RoundedRectangle(cornerRadius: 10.0).fill()
+                RoundedRectangle(cornerRadius: 10.0)
+                    .fill()
+                    .aspectRatio(1.0, contentMode: .fit)
+                    .shadow(radius: 4.0)
                 Text("❔")
             }
         }
