@@ -13,13 +13,13 @@ struct CardView: View {
     var body: some View {
         ZStack {
             if card.isFaceUp {
-                RoundedRectangle(cornerRadius: 10.0)
+                RoundedRectangle(cornerRadius: 16.0)
                     .fill(Color.white)
                     .aspectRatio(1.0, contentMode: .fit)
                     .shadow(radius: 4.0)
                 Text(card.content)
             } else {
-                RoundedRectangle(cornerRadius: 10.0)
+                RoundedRectangle(cornerRadius: 16.0)
                     .fill()
                     .aspectRatio(1.0, contentMode: .fit)
                     .shadow(radius: 4.0)

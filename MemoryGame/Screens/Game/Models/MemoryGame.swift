@@ -10,6 +10,7 @@ import Foundation
 // Model
 struct MemoryGame<CardContent> {
     var cards: Array<Card>
+    var score: Int = 0
     
     init(numberOfPairOfCards: Int, cardContentFactory: (Int) -> CardContent) {
         cards = Array<Card>()

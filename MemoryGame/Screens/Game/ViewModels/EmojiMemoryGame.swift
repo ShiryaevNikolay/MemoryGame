@@ -15,16 +15,28 @@ class EmojiMemoryGame {
         model = EmojiMemoryGame.createMemoryGame()
     }
     
-    private static let emojis = [
+    private static let emojisFirstTheme = [
         "🩼", "🚲", "🗿", "💻", "🧲", "⚔️",
         "🛠", "🦠", "🔊", "🍑", "🍌", "🥥",
         "🍕", "🌮", "🍔", "🍊", "🏓", "🎮",
         "✈️", "🗺", "🏩", "⛩", "💾", "💸"
     ]
+    private static let emojisSecondTheme = [
+        "📽", "🕹", "🖥", "💽", "🗜", "📸",
+        "📟", "🎞", "🎚", "🧭", "🎛", "📡",
+        "💡", "🖲", "🕯", "🧯", "💶", "🪙",
+        "💰", "🪜", "⚙️", "🪤", "🧱", "🔫"
+    ]
+    private static let emojisThirdTheme = [
+        "💣", "🛡", "🪓", "🔪", "⚰️", "🪬",
+        "📿", "🧿", "🔬", "💈", "⚗️", "🏺",
+        "🩹", "🧬", "🧪", "🧺", "🧻", "🛁",
+        "🧼", "🧽", "🔑", "📦", "📭", "✏️"
+    ]
     private var model: MemoryGame<String>
     
     private static func createMemoryGame(numberOfPairsOfCards: Int = Int.random(in: 2...5)) -> MemoryGame<String> {
-        let randomEmojis = emojis.shuffled().prefix(numberOfPairsOfCards)
+        let randomEmojis = emojisFirstTheme.shuffled().prefix(numberOfPairsOfCards)
         return MemoryGame<String>(numberOfPairOfCards: numberOfPairsOfCards) { pairIndex in
             return randomEmojis[pairIndex]
         }
@@ -34,6 +46,10 @@ class EmojiMemoryGame {
     
     var cards: Array<MemoryGame<String>.Card> {
         model.cards // если одна строчка, то можно убрать return
+    }
+    
+    var score: Int {
+        model.score
     }
     
     // MARK: - Intent(s)

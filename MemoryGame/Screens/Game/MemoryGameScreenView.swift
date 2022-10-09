@@ -12,6 +12,9 @@ struct MemoryGameScreenView: View {
     var viewModel: EmojiMemoryGame
     var body: some View {
         VStack {
+            Text("Счет: \(viewModel.score)")
+                .font(.title)
+                .padding()
             CardsView(cards: viewModel.cards) { card in viewModel.choose(card: card) }
             HStack {
                 ButtonView(text: "Новая игра") {
@@ -31,13 +34,12 @@ struct CardsView: View {
     var onTapCard: (MemoryGame<String>.Card) -> Void
     var body: some View {
         
-        let columns = Array(
-            repeating: GridItem(.flexible(), spacing: 20),
-            count: 3
-        )
+        let adaptiveColumns = [
+            GridItem(.adaptive(minimum: 60), spacing: 20)
+        ]
         
         return ScrollView {
-            LazyVGrid(columns: columns, spacing: 20) {
+            LazyVGrid(columns: adaptiveColumns, spacing: 20) {
                 ForEach(cards) { card in
                     CardView(card: card)
                     .onTapGesture {
