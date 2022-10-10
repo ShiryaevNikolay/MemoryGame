@@ -8,7 +8,7 @@
 import Foundation
 
 // ViewModel
-class EmojiMemoryGame {
+class EmojiMemoryGame: ObservableObject {
     // Иммет смысл написать typealias для MemoryGame<String>
     
     init() {
@@ -33,7 +33,8 @@ class EmojiMemoryGame {
         "🩹", "🧬", "🧪", "🧺", "🧻", "🛁",
         "🧼", "🧽", "🔑", "📦", "📭", "✏️"
     ]
-    private var model: MemoryGame<String>
+    
+    @Published private var model: MemoryGame<String>
     
     private static func createMemoryGame(numberOfPairsOfCards: Int = Int.random(in: 2...5)) -> MemoryGame<String> {
         let randomEmojis = emojisFirstTheme.shuffled().prefix(numberOfPairsOfCards)

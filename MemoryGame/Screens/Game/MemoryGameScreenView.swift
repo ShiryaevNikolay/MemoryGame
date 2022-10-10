@@ -9,7 +9,7 @@ import SwiftUI
 
 // Экран с картами
 struct MemoryGameScreenView: View {
-    var viewModel: EmojiMemoryGame
+    @ObservedObject var viewModel: EmojiMemoryGame
     var body: some View {
         VStack {
             Text("Счет: \(viewModel.score)")
