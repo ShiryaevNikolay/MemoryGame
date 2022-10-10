@@ -8,13 +8,13 @@
 import Foundation
 
 // ViewModel
-class EmojiMemoryGame {
+class EmojiMemoryGame: ObservableObject {
     // Иммет смысл написать typealias для MemoryGame<String>
     
-    private var model: MemoryGame<String> = EmojiMemoryGame.createMemoryGame()
+    @Published private var model: MemoryGame<String> = EmojiMemoryGame.createMemoryGame()
     
     static func createMemoryGame() -> MemoryGame<String> {
-        let emojis = ["👾", "🚕"]
+        let emojis = ["👾", "🚕", "📕"]
         return MemoryGame<String>(numberOfPairOfCards: emojis.count) { pairIndex in
             return emojis[pairIndex]
         }
