@@ -30,6 +30,34 @@ struct MemoryGame<CardContent> {
         self.cards[choosenIndex].isFaceUp.toggle()
     }
     
+    // Показывает все карты
+    mutating func showCards() {
+        turnOverAllCards(isFaceUp: true)
+    }
+    
+    // Скрывает все карты
+    mutating func hideCards() {
+        turnOverAllCards(isFaceUp: false)
+    }
+    
+    // Перемешивает все карты
+    mutating func shuffle() {
+        self.cards.shuffle()
+    }
+    
+    // Меняет значение счета
+    mutating func changeScore(by newScore: Int) {
+        self.score += newScore
+    }
+    
+    // Переворачивает все карты
+    private mutating func turnOverAllCards(isFaceUp: Bool) {
+        for index in 0..<self.cards.count {
+            self.cards[index].isFaceUp = isFaceUp
+        }
+    }
+    
+    // Получает индекс карты
     private func index(of card: Card) -> Int {
         for index in 0..<self.cards.count {
             if self.cards[index].id == card.id {
@@ -40,7 +68,7 @@ struct MemoryGame<CardContent> {
     }
     
     struct Card: Identifiable {
-        var isFaceUp: Bool = true
+        var isFaceUp: Bool = false
         var isMatched: Bool = false
         var content: CardContent
         var id: Int
