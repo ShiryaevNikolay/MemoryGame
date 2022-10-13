@@ -23,6 +23,9 @@ struct MemoryGame<CardContent> {
         cards.shuffle()
     }
     
+    /**
+     Выбирается карточка
+     */
     mutating func choose(card: Card) {
         print("card choosen: \(card)")
         
@@ -30,30 +33,77 @@ struct MemoryGame<CardContent> {
         self.cards[choosenIndex].isFaceUp.toggle()
     }
     
-    // Показывает все карты
+    /**
+     Показывает все карты
+     */
     mutating func showCards() {
         turnOverAllCards(isFaceUp: true)
     }
     
-    // Скрывает все карты
-    mutating func hideCards() {
-        turnOverAllCards(isFaceUp: false)
+    /**
+     Скрывает все карты
+     @param hideMathingCards true - нужно скрыть одинаковые карточки, false - если нужно скрыть все карточки
+     */
+    mutating func hideCards(hideMathingCards: Bool = true) {
+        turnOverAllCards(isFaceUp: false, turnOverMathingCards: hideMathingCards)
     }
     
-    // Перемешивает все карты
+    /**
+     Скрываются только выбранные карточки
+     */
+    mutating func hideCards(cards: Array<Card>) {
+        turnOverCards(cards: cards, isFaceUp: false)
+    }
+    
+    /**
+     Перемешивает все карты
+     */
     mutating func shuffle() {
         self.cards.shuffle()
+        for index in 0..<self.cards.count {
+            self.cards[index].isMatched = false
+        }
     }
     
-    // Меняет значение счета
+    /**
+     Прибавляет к счету новое значение
+     */
     mutating func changeScore(by newScore: Int) {
         self.score += newScore
     }
     
+    /**
+     Очищает счет
+     */
+    mutating func clearScore() {
+        self.score = 0
+    }
+    
+    /**
+     Устанавливает, что карточки были одинаковые
+     */
+    mutating func match(firstCard: Card, secondCard: Card) {
+        let firstChoosenIndex: Int = self.index(of: firstCard)
+        let secondChoosenIndex: Int = self.index(of: secondCard)
+        self.cards[firstChoosenIndex].isMatched = true
+        self.cards[secondChoosenIndex].isMatched = true
+    }
+    
     // Переворачивает все карты
-    private mutating func turnOverAllCards(isFaceUp: Bool) {
+    private mutating func turnOverAllCards(isFaceUp: Bool, turnOverMathingCards: Bool = true) {
         for index in 0..<self.cards.count {
+            if !turnOverMathingCards && self.cards[index].isMatched {
+                continue
+            }
             self.cards[index].isFaceUp = isFaceUp
+        }
+    }
+    
+    // Переворачивает выбранные карты
+    private mutating func turnOverCards(cards choosenCards: Array<Card>, isFaceUp: Bool) {
+        choosenCards.forEach { choosenCard in
+            let choosenIndex: Int = self.index(of: choosenCard)
+            self.cards[choosenIndex].isFaceUp = isFaceUp
         }
     }
     

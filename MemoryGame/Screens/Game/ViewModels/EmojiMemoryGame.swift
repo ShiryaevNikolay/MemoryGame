@@ -7,6 +7,8 @@
 
 import Foundation
 
+typealias EmojiCard = MemoryGame<String>.Card
+
 // ViewModel
 class EmojiMemoryGame: ObservableObject {
     // Иммет смысл написать typealias для MemoryGame<String>
@@ -36,10 +38,10 @@ class EmojiMemoryGame: ObservableObject {
         "🧼", "🧽", "🔑", "📦", "📭", "✏️"
     ]
     
-    private static let timeDelayBySeconds = UInt64(4 * 1E9)
+    private static let timeDelayBySeconds = UInt64(2 * 1E9)
     
     private var task: Task<Void, Error>?
-//    private var chosenFirstCardId: Int? = nil
+    private var chosenFirstCard: EmojiCard? = nil
     
     private static func createMemoryGame(numberOfPairsOfCards: Int = Int.random(in: 2...5)) -> MemoryGame<String> {
         let randomEmojis = emojisFirstTheme.shuffled().prefix(numberOfPairsOfCards)
@@ -68,7 +70,7 @@ class EmojiMemoryGame: ObservableObject {
         self.task?.cancel()
         showCards()
         self.task = EmojiMemoryGame.subscribeOn(
-            onSuccess: handleSuccess,
+            onSuccess: hideAllCardsOnMainActor,
             onError: handleError
         )
     }
@@ -79,23 +81,46 @@ class EmojiMemoryGame: ObservableObject {
     }
     
     // Скрывает карточки
-    private func hideCards() {
-        model.hideCards()
+    private func hideCards(hideMathingCards: Bool = true) {
+        model.hideCards(hideMathingCards: hideMathingCards)
+    }
+    
+    // Скрывает выбранные карточки
+    private func hideChoosenCards(cards: Array<EmojiCard>) {
+        model.hideCards(cards: cards)
     }
     
     @MainActor
-    private func handleSuccess() async {
+    private func hideAllCardsOnMainActor() async {
         hideCards()
     }
     
     @MainActor
+    private func hideChoosenCardsOnMainActor(cards: Array<EmojiCard>) async {
+        hideChoosenCards(cards: cards)
+    }
+    
+    @MainActor
     private func handleError(error: Error) async {
-//        hideCards()
+//        hideCards() // TODO: убрать
+    }
+    
+    // Скрывает разные карты
+    private func hideDifferentCards(firstCard: EmojiCard, secondCard: EmojiCard) {
+        self.task?.cancel()
+        self.task = EmojiMemoryGame.subscribeOn(
+            onSuccess: {
+                await self.hideChoosenCardsOnMainActor(cards: [firstCard, secondCard])
+            },
+            onError: { erron in
+                await self.hideChoosenCardsOnMainActor(cards: [firstCard, secondCard])
+            }
+        )
     }
     
     // MARK: - Access to the Model
     
-    var cards: Array<MemoryGame<String>.Card> {
+    var cards: Array<EmojiCard> {
         model.cards // если одна строчка, то можно убрать return
     }
     
@@ -105,25 +130,46 @@ class EmojiMemoryGame: ObservableObject {
     
     // MARK: - Intent(s)
     
-    func choose(card: MemoryGame<String>.Card) {
-//        if chosenFirstCardId == nil {
-//            chosenFirstCardId = card.id
-//        } else {
-//            if chosenFirstCardId == card.id {
-//                model.changeScore(by: 2)
-//            } else {
-//                model.changeScore(by: -1)
-//            }
-//            chosenFirstCardId = nil
-//        }
+    /**
+     Выбор карточки
+     */
+    func choose(card: EmojiCard) {
+        // Если карточка показывается, то ничего не делаем
+        if card.isFaceUp {
+            return
+        }
+        // Если повторно выбрали ту же карту, то ничего не делаем
+        if card.id == chosenFirstCard?.id {
+            return
+        }
+        
+        if chosenFirstCard == nil {
+            chosenFirstCard = card
+            hideCards(hideMathingCards: false)
+        } else {
+            if card.content == chosenFirstCard?.content && card.id != chosenFirstCard?.id {
+                model.changeScore(by: 2)
+                model.match(firstCard: chosenFirstCard!, secondCard: card)
+            } else if card.content != chosenFirstCard?.content && card.id != chosenFirstCard?.id {
+                model.changeScore(by: -1)
+                hideDifferentCards(firstCard: chosenFirstCard!, secondCard: card)
+            }
+            chosenFirstCard = nil
+        }
         model.choose(card: card)
     }
     
+    /**
+     Создает модель с новыми данными
+     */
     func newGame() {
         model = EmojiMemoryGame.createMemoryGame()
         showCardsForTime()
     }
     
+    /**
+     Перемешивает карточки
+     */
     func shuffleCards() {
         model.shuffle()
         showCardsForTime()
