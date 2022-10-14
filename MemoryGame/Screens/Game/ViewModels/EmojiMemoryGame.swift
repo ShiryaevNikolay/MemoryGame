@@ -143,6 +143,8 @@ class EmojiMemoryGame: ObservableObject {
             return
         }
         
+        self.task?.cancel()
+        
         if chosenFirstCard == nil {
             chosenFirstCard = card
             hideCards(hideMathingCards: false)
