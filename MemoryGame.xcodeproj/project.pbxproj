@@ -15,7 +15,6 @@
 		72B262E528E2049700FDE4AD /* MemoryGameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B262E428E2049700FDE4AD /* MemoryGameApp.swift */; };
 		72B262E928E2049800FDE4AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72B262E828E2049800FDE4AD /* Assets.xcassets */; };
 		72B262EC28E2049800FDE4AD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72B262EB28E2049800FDE4AD /* Preview Assets.xcassets */; };
-		72DA757728F47CF300FA4DAF /* SettingsScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DA757628F47CF300FA4DAF /* SettingsScreenView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,7 +27,6 @@
 		72B262E428E2049700FDE4AD /* MemoryGameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGameApp.swift; sourceTree = "<group>"; };
 		72B262E828E2049800FDE4AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		72B262EB28E2049800FDE4AD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		72DA757628F47CF300FA4DAF /* SettingsScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreenView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,7 +51,6 @@
 		727FDECF28EDF1AE0000740D /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				72DA757328F47CCC00FA4DAF /* Settings */,
 				727FDED128EDF36B0000740D /* Game */,
 			);
 			path = Screens;
@@ -128,30 +125,6 @@
 				72B262EB28E2049800FDE4AD /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		72DA757328F47CCC00FA4DAF /* Settings */ = {
-			isa = PBXGroup;
-			children = (
-				72DA757528F47CDA00FA4DAF /* Models */,
-				72DA757428F47CD300FA4DAF /* ViewModels */,
-				72DA757628F47CF300FA4DAF /* SettingsScreenView.swift */,
-			);
-			path = Settings;
-			sourceTree = "<group>";
-		};
-		72DA757428F47CD300FA4DAF /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		72DA757528F47CDA00FA4DAF /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,7 +202,6 @@
 				72238BBE28F4067900CF266F /* ButtonView.swift in Sources */,
 				727FDED328EDF39A0000740D /* MemoryGameScreenView.swift in Sources */,
 				727FDEDB28EE050D0000740D /* CardView.swift in Sources */,
-				72DA757728F47CF300FA4DAF /* SettingsScreenView.swift in Sources */,
 				72ADA4A828E471C500459A2D /* EmojiMemoryGame.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
