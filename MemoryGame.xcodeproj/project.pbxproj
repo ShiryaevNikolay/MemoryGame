@@ -17,6 +17,7 @@
 		72B262E528E2049700FDE4AD /* MemoryGameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B262E428E2049700FDE4AD /* MemoryGameApp.swift */; };
 		72B262E928E2049800FDE4AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72B262E828E2049800FDE4AD /* Assets.xcassets */; };
 		72B262EC28E2049800FDE4AD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72B262EB28E2049800FDE4AD /* Preview Assets.xcassets */; };
+		72B3E2A228F95BC200AAF766 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B3E2A128F95BC200AAF766 /* Theme.swift */; };
 		72BD1D5928F8782500248F7E /* SettingsScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BD1D5828F8782500248F7E /* SettingsScreenView.swift */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +33,7 @@
 		72B262E428E2049700FDE4AD /* MemoryGameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGameApp.swift; sourceTree = "<group>"; };
 		72B262E828E2049800FDE4AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		72B262EB28E2049800FDE4AD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		72B3E2A128F95BC200AAF766 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		72BD1D5828F8782500248F7E /* SettingsScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreenView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -150,9 +152,18 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		72B3E2A028F95BB300AAF766 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				72B3E2A128F95BC200AAF766 /* Theme.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		72BD1D5728F8781100248F7E /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				72B3E2A028F95BB300AAF766 /* Data */,
 				7229897828F8787100A74F98 /* ViewModels */,
 				7229897728F8786A00A74F98 /* Models */,
 				72BD1D5828F8782500248F7E /* SettingsScreenView.swift */,
@@ -237,6 +248,7 @@
 				727FDED328EDF39A0000740D /* MemoryGameScreenView.swift in Sources */,
 				727FDEDB28EE050D0000740D /* CardView.swift in Sources */,
 				72BD1D5928F8782500248F7E /* SettingsScreenView.swift in Sources */,
+				72B3E2A228F95BC200AAF766 /* Theme.swift in Sources */,
 				72ADA4A828E471C500459A2D /* EmojiMemoryGame.swift in Sources */,
 				7229897A28F8788D00A74F98 /* SettingsViewModel.swift in Sources */,
 			);

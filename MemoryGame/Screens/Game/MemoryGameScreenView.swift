@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-// Экран с картами
+/**
+ Экран с картами
+ */
 struct MemoryGameScreenView: View {
     @ObservedObject var viewModel: EmojiMemoryGame
     var body: some View {
         VStack {
-            Text("Счет: \(viewModel.score)")
-                .font(.title)
-                .padding()
+            TitleView(score: viewModel.score)
             CardsView(cards: viewModel.cards) { card in viewModel.choose(card: card) }
             HStack {
                 ButtonView(text: "Новая игра") {
@@ -28,7 +28,34 @@ struct MemoryGameScreenView: View {
     }
 }
 
-// Отображает список карт
+/**
+ Отображает заголовок
+ */
+struct TitleView: View {
+    var score: Int
+    
+    var body: some View {
+        HStack {
+            Text("Счет: \(score)")
+                .font(.title)
+                .padding()
+            Spacer()
+            Button(
+                action: {
+                    // TODO: обработать нажатие
+                },
+                label: {
+                    // TODO: добавить иконку
+//                    Image("is_settings").foregroundColor(Color.black)
+                }
+            )
+        }
+    }
+}
+
+/**
+ Отображает список карт
+ */
 struct CardsView: View {
     var cards: Array<MemoryGame<String>.Card>
     var onTapCard: (MemoryGame<String>.Card) -> Void
@@ -54,7 +81,9 @@ struct CardsView: View {
     }
 }
 
-// Preview
+/**
+ Preview
+ */
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         MemoryGameScreenView(viewModel: EmojiMemoryGame())

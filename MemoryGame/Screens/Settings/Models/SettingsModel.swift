@@ -11,5 +11,5 @@ import Foundation
  Модель экрана настроек
  */
 struct SettingsModel {
-    
+    var theme: Theme
 }
