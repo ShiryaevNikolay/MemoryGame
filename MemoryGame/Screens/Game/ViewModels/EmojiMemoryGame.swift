@@ -143,7 +143,7 @@ class EmojiMemoryGame: ObservableObject {
             return
         }
         
-//        self.task?.cancel()
+        self.task?.cancel()
         
         if chosenFirstCard == nil {
             chosenFirstCard = card
