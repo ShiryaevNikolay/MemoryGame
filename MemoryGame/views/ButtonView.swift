@@ -10,6 +10,7 @@ import SwiftUI
 // Стилизованная кнопка
 struct ButtonView: View {
     var text: String
+    var backgroundColor: Color = Color(.secondarySystemBackground)
     var onClickListener: () -> Void
     var body: some View {
         Button(action: onClickListener) {
@@ -18,16 +19,18 @@ struct ButtonView: View {
                 Text(text)
             }
         }
-        .buttonStyle(ButtonViewStyle())
+        .buttonStyle(ButtonViewStyle(backgroundColor: backgroundColor))
     }
 }
 
 // Стиль кнопки
 struct ButtonViewStyle: ButtonStyle {
+    var backgroundColor: Color = Color(.secondarySystemBackground)
+    
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .padding()
-            .background(Color(.secondarySystemBackground))
+            .background(backgroundColor)
             .clipShape(Capsule())
             .scaleEffect(configuration.isPressed ? 0.95 : 1)
 //            .animation(.spring(), value: configuration.isPressed) // Можно выбрать другую анимацию

@@ -35,6 +35,7 @@ struct SettingsScreenView: View {
             Spacer()
         }
         .padding()
+        .background(Color(settingsViewModel.theme.getTheme().backgroundScreenColor))
     }
 }
 

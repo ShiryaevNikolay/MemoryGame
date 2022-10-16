@@ -17,20 +17,36 @@ struct MemoryGameScreenView: View {
         let theme = settingsViewModel.theme.getTheme()
         
         VStack {
-            TitleGameView(score: viewModel.score)
+            TitleGameView(
+                score: viewModel.score,
+                theme: settingsViewModel.theme
+            )
             CardsView(
                 cards: viewModel.cards,
                 backOfCardsColor: Color(theme.backgroundCardColor)
             ) { card in viewModel.choose(card: card) }
             HStack {
-                ButtonView(text: "Новая игра") {
+                ButtonView(
+                    text: "Новая игра",
+                    backgroundColor: Color(
+                        settingsViewModel.theme.getTheme().backgroundCardColor,
+                        alpha: 0.5
+                    )
+                ) {
                     viewModel.newGame()
                 }
-                ButtonView(text: "Перемешать карты") {
+                ButtonView(
+                    text: "Перемешать карты",
+                    backgroundColor: Color(
+                        settingsViewModel.theme.getTheme().backgroundCardColor,
+                        alpha: 0.5
+                    )
+                ) {
                     viewModel.shuffleCards()
                 }
             }
         }
+        .background(Color(settingsViewModel.theme.getTheme().backgroundScreenColor))
     }
 }
 
@@ -39,6 +55,7 @@ struct MemoryGameScreenView: View {
  */
 struct TitleGameView: View {
     var score: Int
+    var theme: Theme
     
     var body: some View {
         HStack {
@@ -46,7 +63,13 @@ struct TitleGameView: View {
                 .font(.title)
                 .padding()
             Spacer()
-            ButtonView(text: "Настройки") {
+            ButtonView(
+                text: "Настройки",
+                backgroundColor: Color(
+                    theme.getTheme().backgroundCardColor,
+                    alpha: 0.5
+                )
+            ) {
                 // TODO: открывать экран настроек
             }
                 .padding()

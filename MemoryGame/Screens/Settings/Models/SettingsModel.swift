@@ -15,7 +15,7 @@ struct SettingsModel {
     var difficulty: Difficalty
     
     init(
-        theme: Theme = Theme.secondTheme,
+        theme: Theme = Theme.firstTheme,
         difficulty: Difficalty = Difficalty.normal
     ) {
         self.theme = theme
