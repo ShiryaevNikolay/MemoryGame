@@ -15,10 +15,18 @@ struct SettingsModel {
     var difficulty: Difficalty
     
     init(
-        theme: Theme = Theme.firstTheme,
-        difficulty: Difficalty = Difficalty.easy
+        theme: Theme = Theme.secondTheme,
+        difficulty: Difficalty = Difficalty.normal
     ) {
         self.theme = theme
         self.difficulty = difficulty
+    }
+    
+    mutating func setTheme(_ selectedTheme: Theme) {
+        self.theme = selectedTheme
+    }
+    
+    mutating func setDifficalty(_ selectedDifficalty: Difficalty) {
+        self.difficulty = selectedDifficalty
     }
 }

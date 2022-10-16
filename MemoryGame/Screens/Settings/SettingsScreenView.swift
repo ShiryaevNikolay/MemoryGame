@@ -11,18 +11,27 @@ import SwiftUI
  Экран настроек
  */
 struct SettingsScreenView: View {
+    @ObservedObject var settingsViewModel: SettingsViewModel
     var body: some View {
         VStack(alignment: .leading) {
-            TitleSettingsView()
+            TitleSettingsView {
+                // TODO: Возвращаться назад
+            }
             Spacer()
                 .frame(height: 20)
             SubtitleView("Тема")
-            ThemesGridView()
+            ThemesGridView(selectedTheme: settingsViewModel.theme) { theme in
+                settingsViewModel.changeTheme(to: theme)
+            }
                 .frame(height: 200)
             Spacer()
                 .frame(height: 20)
             SubtitleView("Уровень сложности")
-            DifficaltyPickerView(selectedDifficalty: Difficalty.easy)
+            DifficaltyPickerView(
+                selectedDifficalty: settingsViewModel.difficalty
+            ) { difficalty in
+                settingsViewModel.changeDifficalty(to: difficalty)
+            }
             Spacer()
         }
         .padding()
@@ -33,12 +42,13 @@ struct SettingsScreenView: View {
  Заголовок экрана настроек
  */
 struct TitleSettingsView: View {
+    var backNavigationListener: () -> ()
     var body: some View {
         HStack {
             Image(systemName: "house")
                 .imageScale(.large)
                 .onTapGesture {
-                    // TODO: Вернуться на главный экран
+                    backNavigationListener()
                 }
             HeaderView("Настройки")
         }
@@ -72,7 +82,8 @@ struct SubtitleView: View {
 }
 
 struct ThemesGridView: View {
-    var selectedTheme: Theme = Theme.firstTheme
+    var selectedTheme: Theme
+    var onClickListener: (Theme) -> ()
     var body: some View {
         Grid(horizontalSpacing: 24, verticalSpacing: 16) {
             GridRow {
@@ -82,12 +93,17 @@ struct ThemesGridView: View {
                         card: EmojiCard(content: "", id: 0)
                     )
                         .shadow(radius: 6)
+                        .onTapGesture {
+                            onClickListener(theme)
+                        }
                 }
             }
             GridRow {
                 ForEach(Theme.allCases, id: \.self) { theme in
                     if selectedTheme == theme {
                         Text("Текущая")
+                    } else {
+                        Spacer()
                     }
                 }
             }
@@ -97,14 +113,15 @@ struct ThemesGridView: View {
 
 struct DifficaltyPickerView: View {
     var selectedDifficalty: Difficalty
+    var onClickListener: (Difficalty) -> ()
     var body: some View {
         VStack(alignment: .leading) {
             ForEach(Difficalty.allCases, id: \.self) { difficalty in
-                return RadioButtonView(
+                RadioButtonView(
                     text: difficalty.getText(),
                     isOn: difficalty == selectedDifficalty
                 ) {
-                    // TODO: переключать уровень сложности
+                    onClickListener(difficalty)
                 }
             }
         }
@@ -116,6 +133,6 @@ struct DifficaltyPickerView: View {
  */
 struct SettingsScreenView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsScreenView()
+        SettingsScreenView(settingsViewModel: SettingsViewModel())
     }
 }

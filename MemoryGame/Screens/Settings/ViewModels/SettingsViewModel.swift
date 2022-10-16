@@ -28,17 +28,13 @@ class SettingsViewModel: ObservableObject {
         model.difficulty
     }
     
-    var cardView: EmojiCard {
-        EmojiCard(content: "🐱", id: 0)
-    }
-    
     // MARK: - Intent(s)
     
-    func changeTheme() {
-        // TODO: менять тему
+    func changeTheme(to selectedTheme: Theme) {
+        model.setTheme(selectedTheme)
     }
     
-    func changeDifficalty() {
-        // TODO: менять уровень сложности
+    func changeDifficalty(to selectedDifficalty: Difficalty) {
+        model.setDifficalty(selectedDifficalty)
     }
 }
