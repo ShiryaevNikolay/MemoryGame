@@ -10,6 +10,7 @@ import SwiftUI
 // Отображает карту
 struct CardView: View {
     var card: MemoryGame<String>.Card
+    var backColor: Color
     var body: some View {
         ZStack {
             if card.isFaceUp {
@@ -20,10 +21,9 @@ struct CardView: View {
                 Text(card.content)
             } else {
                 RoundedRectangle(cornerRadius: 16.0)
-                    .fill()
+                    .fill(backColor)
                     .aspectRatio(1.0, contentMode: .fit)
                     .shadow(radius: 4.0)
-                Text("❔")
             }
         }
     }

@@ -12,4 +12,13 @@ import Foundation
  */
 struct SettingsModel {
     var theme: Theme
+    var difficulty: Difficalty
+    
+    init(
+        theme: Theme = Theme.firstTheme,
+        difficulty: Difficalty = Difficalty.easy
+    ) {
+        self.theme = theme
+        self.difficulty = difficulty
+    }
 }

@@ -11,7 +11,6 @@ typealias EmojiCard = MemoryGame<String>.Card
 
 // ViewModel
 class EmojiMemoryGame: ObservableObject {
-    // Иммет смысл написать typealias для MemoryGame<String>
     
     init() {
         model = EmojiMemoryGame.createMemoryGame()

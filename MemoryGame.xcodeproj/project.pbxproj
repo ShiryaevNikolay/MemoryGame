@@ -11,6 +11,10 @@
 		72238BBE28F4067900CF266F /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72238BBD28F4067900CF266F /* ButtonView.swift */; };
 		7229897A28F8788D00A74F98 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7229897928F8788D00A74F98 /* SettingsViewModel.swift */; };
 		7229897C28F878A200A74F98 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7229897B28F878A200A74F98 /* SettingsModel.swift */; };
+		7249DEE928FB11C8006584F8 /* Difficalty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7249DEE828FB11C8006584F8 /* Difficalty.swift */; };
+		7249DEEC28FB18E9006584F8 /* ThemeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7249DEEB28FB18E9006584F8 /* ThemeCardView.swift */; };
+		7249DEF028FB1DB4006584F8 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7249DEEF28FB1DB4006584F8 /* Extensions.swift */; };
+		7249DEF228FC0570006584F8 /* RadioButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7249DEF128FC0570006584F8 /* RadioButtonView.swift */; };
 		727FDED328EDF39A0000740D /* MemoryGameScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727FDED228EDF39A0000740D /* MemoryGameScreenView.swift */; };
 		727FDEDB28EE050D0000740D /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727FDEDA28EE050D0000740D /* CardView.swift */; };
 		72ADA4A828E471C500459A2D /* EmojiMemoryGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72ADA4A728E471C500459A2D /* EmojiMemoryGame.swift */; };
@@ -26,6 +30,10 @@
 		72238BBD28F4067900CF266F /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		7229897928F8788D00A74F98 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		7229897B28F878A200A74F98 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
+		7249DEE828FB11C8006584F8 /* Difficalty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Difficalty.swift; sourceTree = "<group>"; };
+		7249DEEB28FB18E9006584F8 /* ThemeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeCardView.swift; sourceTree = "<group>"; };
+		7249DEEF28FB1DB4006584F8 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		7249DEF128FC0570006584F8 /* RadioButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButtonView.swift; sourceTree = "<group>"; };
 		727FDED228EDF39A0000740D /* MemoryGameScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGameScreenView.swift; sourceTree = "<group>"; };
 		727FDEDA28EE050D0000740D /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		72ADA4A728E471C500459A2D /* EmojiMemoryGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiMemoryGame.swift; sourceTree = "<group>"; };
@@ -52,6 +60,7 @@
 			isa = PBXGroup;
 			children = (
 				72238BBD28F4067900CF266F /* ButtonView.swift */,
+				7249DEF128FC0570006584F8 /* RadioButtonView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -70,6 +79,29 @@
 				7229897928F8788D00A74F98 /* SettingsViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		7249DEE328F98598006584F8 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				7249DEE428F985AD006584F8 /* ViewModels */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		7249DEE428F985AD006584F8 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		7249DEEA28FB18D0006584F8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7249DEEB28FB18E9006584F8 /* ThemeCardView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		727FDECF28EDF1AE0000740D /* Screens */ = {
@@ -135,6 +167,7 @@
 		72B262E328E2049700FDE4AD /* MemoryGame */ = {
 			isa = PBXGroup;
 			children = (
+				7249DEE328F98598006584F8 /* Navigation */,
 				72238BBC28F4066500CF266F /* Views */,
 				727FDECF28EDF1AE0000740D /* Screens */,
 				72B262E428E2049700FDE4AD /* MemoryGameApp.swift */,
@@ -156,6 +189,8 @@
 			isa = PBXGroup;
 			children = (
 				72B3E2A128F95BC200AAF766 /* Theme.swift */,
+				7249DEE828FB11C8006584F8 /* Difficalty.swift */,
+				7249DEEF28FB1DB4006584F8 /* Extensions.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -163,6 +198,7 @@
 		72BD1D5728F8781100248F7E /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				7249DEEA28FB18D0006584F8 /* Views */,
 				72B3E2A028F95BB300AAF766 /* Data */,
 				7229897828F8787100A74F98 /* ViewModels */,
 				7229897728F8786A00A74F98 /* Models */,
@@ -243,13 +279,17 @@
 			files = (
 				7229897C28F878A200A74F98 /* SettingsModel.swift in Sources */,
 				720FFAF528E239E300C0DA2F /* MemoryGame.swift in Sources */,
+				7249DEF228FC0570006584F8 /* RadioButtonView.swift in Sources */,
+				7249DEEC28FB18E9006584F8 /* ThemeCardView.swift in Sources */,
 				72B262E528E2049700FDE4AD /* MemoryGameApp.swift in Sources */,
 				72238BBE28F4067900CF266F /* ButtonView.swift in Sources */,
 				727FDED328EDF39A0000740D /* MemoryGameScreenView.swift in Sources */,
 				727FDEDB28EE050D0000740D /* CardView.swift in Sources */,
 				72BD1D5928F8782500248F7E /* SettingsScreenView.swift in Sources */,
+				7249DEF028FB1DB4006584F8 /* Extensions.swift in Sources */,
 				72B3E2A228F95BC200AAF766 /* Theme.swift in Sources */,
 				72ADA4A828E471C500459A2D /* EmojiMemoryGame.swift in Sources */,
+				7249DEE928FB11C8006584F8 /* Difficalty.swift in Sources */,
 				7229897A28F8788D00A74F98 /* SettingsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

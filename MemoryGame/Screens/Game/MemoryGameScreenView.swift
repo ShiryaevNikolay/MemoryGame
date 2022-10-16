@@ -12,10 +12,16 @@ import SwiftUI
  */
 struct MemoryGameScreenView: View {
     @ObservedObject var viewModel: EmojiMemoryGame
+    @ObservedObject var settingsViewModel: SettingsViewModel
     var body: some View {
+        let theme = settingsViewModel.theme.getTheme()
+        
         VStack {
-            TitleView(score: viewModel.score)
-            CardsView(cards: viewModel.cards) { card in viewModel.choose(card: card) }
+            TitleGameView(score: viewModel.score)
+            CardsView(
+                cards: viewModel.cards,
+                backOfCardsColor: Color(theme.backgroundCardColor)
+            ) { card in viewModel.choose(card: card) }
             HStack {
                 ButtonView(text: "Новая игра") {
                     viewModel.newGame()
@@ -31,7 +37,7 @@ struct MemoryGameScreenView: View {
 /**
  Отображает заголовок
  */
-struct TitleView: View {
+struct TitleGameView: View {
     var score: Int
     
     var body: some View {
@@ -40,15 +46,10 @@ struct TitleView: View {
                 .font(.title)
                 .padding()
             Spacer()
-            Button(
-                action: {
-                    // TODO: обработать нажатие
-                },
-                label: {
-                    // TODO: добавить иконку
-//                    Image("is_settings").foregroundColor(Color.black)
-                }
-            )
+            ButtonView(text: "Настройки") {
+                // TODO: открывать экран настроек
+            }
+                .padding()
         }
     }
 }
@@ -58,6 +59,7 @@ struct TitleView: View {
  */
 struct CardsView: View {
     var cards: Array<MemoryGame<String>.Card>
+    var backOfCardsColor: Color
     var onTapCard: (MemoryGame<String>.Card) -> Void
     var body: some View {
         
@@ -68,10 +70,13 @@ struct CardsView: View {
         return ScrollView {
             LazyVGrid(columns: adaptiveColumns, spacing: 20) {
                 ForEach(cards) { card in
-                    CardView(card: card)
-                    .onTapGesture {
-                        onTapCard(card)
-                    }
+                    CardView(
+                        card: card,
+                        backColor: backOfCardsColor
+                    )
+                        .onTapGesture {
+                            onTapCard(card)
+                        }
                 }
             }
             .padding()
@@ -86,6 +91,9 @@ struct CardsView: View {
  */
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        MemoryGameScreenView(viewModel: EmojiMemoryGame())
+        MemoryGameScreenView(
+            viewModel: EmojiMemoryGame(),
+            settingsViewModel: SettingsViewModel()
+        )
     }
 }
