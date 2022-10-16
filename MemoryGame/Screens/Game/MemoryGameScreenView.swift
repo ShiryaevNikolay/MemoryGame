@@ -21,6 +21,7 @@ struct MemoryGameScreenView: View {
                 score: viewModel.score,
                 theme: settingsViewModel.theme
             )
+            .padding()
             CardsView(
                 cards: viewModel.cards,
                 backOfCardsColor: Color(theme.backgroundCardColor)
@@ -59,9 +60,11 @@ struct TitleGameView: View {
     
     var body: some View {
         HStack {
-            Text("Счет: \(score)")
-                .font(.title)
-                .padding()
+            VStack(alignment: .leading) {
+                Text("Счет: \(score)")
+                    .font(.title)
+                Text("\(theme.getName())")
+            }
             Spacer()
             ButtonView(
                 text: "Настройки",
@@ -72,7 +75,6 @@ struct TitleGameView: View {
             ) {
                 // TODO: открывать экран настроек
             }
-                .padding()
         }
     }
 }

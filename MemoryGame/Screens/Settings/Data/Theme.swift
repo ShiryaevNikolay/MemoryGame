@@ -23,7 +23,9 @@ enum Theme: CaseIterable {
     case firstTheme
     case secondTheme
     case thirdTheme
-    
+}
+
+extension Theme {
     func getTheme() -> BaseTheme {
         switch self {
         case .firstTheme:
@@ -44,6 +46,17 @@ enum Theme: CaseIterable {
                 backgroundScreenColor: 0x92BAF5,
                 backgroundCardColor: 0x79A6EA
             )
+        }
+    }
+    
+    func getName() -> String {
+        switch self {
+        case .firstTheme:
+            return "Белая тема"
+        case .secondTheme:
+            return "Красная тема"
+        case .thirdTheme:
+            return "Синяя тема"
         }
     }
 }
