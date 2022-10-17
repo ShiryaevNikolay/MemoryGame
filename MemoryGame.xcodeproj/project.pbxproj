@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		720FFAF528E239E300C0DA2F /* MemoryGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720FFAF428E239E300C0DA2F /* MemoryGame.swift */; };
+		721C453128FD404900B2FC37 /* MyGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721C453028FD404900B2FC37 /* MyGrid.swift */; };
 		72ADA4A828E471C500459A2D /* EmojiMemoryGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72ADA4A728E471C500459A2D /* EmojiMemoryGame.swift */; };
 		72B262E528E2049700FDE4AD /* MemoryGameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B262E428E2049700FDE4AD /* MemoryGameApp.swift */; };
 		72B262E728E2049700FDE4AD /* EmojiMemoryGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B262E628E2049700FDE4AD /* EmojiMemoryGameView.swift */; };
@@ -17,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		720FFAF428E239E300C0DA2F /* MemoryGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGame.swift; sourceTree = "<group>"; };
+		721C453028FD404900B2FC37 /* MyGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGrid.swift; sourceTree = "<group>"; };
 		72ADA4A728E471C500459A2D /* EmojiMemoryGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiMemoryGame.swift; sourceTree = "<group>"; };
 		72B262E128E2049700FDE4AD /* MemoryGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemoryGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72B262E428E2049700FDE4AD /* MemoryGameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGameApp.swift; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 			children = (
 				72B262E428E2049700FDE4AD /* MemoryGameApp.swift */,
 				72B262E628E2049700FDE4AD /* EmojiMemoryGameView.swift */,
+				721C453028FD404900B2FC37 /* MyGrid.swift */,
 				720FFAF428E239E300C0DA2F /* MemoryGame.swift */,
 				72ADA4A728E471C500459A2D /* EmojiMemoryGame.swift */,
 				72B262E828E2049800FDE4AD /* Assets.xcassets */,
@@ -147,6 +150,7 @@
 				72B262E728E2049700FDE4AD /* EmojiMemoryGameView.swift in Sources */,
 				72B262E528E2049700FDE4AD /* MemoryGameApp.swift in Sources */,
 				72ADA4A828E471C500459A2D /* EmojiMemoryGame.swift in Sources */,
+				721C453128FD404900B2FC37 /* MyGrid.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
