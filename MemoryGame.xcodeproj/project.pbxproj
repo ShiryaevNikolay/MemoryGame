@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		720FFAF528E239E300C0DA2F /* MemoryGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720FFAF428E239E300C0DA2F /* MemoryGame.swift */; };
 		721C453128FD404900B2FC37 /* MyGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721C453028FD404900B2FC37 /* MyGrid.swift */; };
+		722EDE15292B5AFD00AC3120 /* Cardify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722EDE14292B5AFD00AC3120 /* Cardify.swift */; };
 		723D4D7E2910F4EF00455435 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723D4D7D2910F4EF00455435 /* Extensions.swift */; };
 		7265114C290FA86000B847E5 /* GridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7265114B290FA86000B847E5 /* GridLayout.swift */; };
 		72ADA4A828E471C500459A2D /* EmojiMemoryGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72ADA4A728E471C500459A2D /* EmojiMemoryGame.swift */; };
@@ -22,6 +23,7 @@
 /* Begin PBXFileReference section */
 		720FFAF428E239E300C0DA2F /* MemoryGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGame.swift; sourceTree = "<group>"; };
 		721C453028FD404900B2FC37 /* MyGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGrid.swift; sourceTree = "<group>"; };
+		722EDE14292B5AFD00AC3120 /* Cardify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cardify.swift; sourceTree = "<group>"; };
 		723D4D7D2910F4EF00455435 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		7265114B290FA86000B847E5 /* GridLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridLayout.swift; sourceTree = "<group>"; };
 		72ADA4A728E471C500459A2D /* EmojiMemoryGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiMemoryGame.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 			children = (
 				72B262E428E2049700FDE4AD /* MemoryGameApp.swift */,
 				72B262E628E2049700FDE4AD /* EmojiMemoryGameView.swift */,
+				722EDE14292B5AFD00AC3120 /* Cardify.swift */,
 				72EF7AAE2918F0D20018E71D /* Pie.swift */,
 				723D4D7D2910F4EF00455435 /* Extensions.swift */,
 				721C453028FD404900B2FC37 /* MyGrid.swift */,
@@ -158,6 +161,7 @@
 				720FFAF528E239E300C0DA2F /* MemoryGame.swift in Sources */,
 				72B262E728E2049700FDE4AD /* EmojiMemoryGameView.swift in Sources */,
 				72EF7AAF2918F0D20018E71D /* Pie.swift in Sources */,
+				722EDE15292B5AFD00AC3120 /* Cardify.swift in Sources */,
 				72B262E528E2049700FDE4AD /* MemoryGameApp.swift in Sources */,
 				7265114C290FA86000B847E5 /* GridLayout.swift in Sources */,
 				72ADA4A828E471C500459A2D /* EmojiMemoryGame.swift in Sources */,
