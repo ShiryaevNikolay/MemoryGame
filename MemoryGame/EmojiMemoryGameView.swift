@@ -10,14 +10,19 @@ import SwiftUI
 struct EmojiMemoryGameView: View {
     @ObservedObject var viewModel: EmojiMemoryGame
     var body: some View {
-        MyGrid(viewModel.cards) { card in
-            CardView(card: card).onTapGesture {
-                viewModel.choose(card: card)
+        VStack {
+            MyGrid(viewModel.cards) { card in
+                CardView(card: card).onTapGesture {
+                    withAnimation(.linear(duration: 0.75)) {
+                        viewModel.choose(card: card)
+                    }
+                }
+                .padding(5)
             }
-            .padding(5)
+                .padding()
+                .foregroundColor(Color.orange)
+            Button { withAnimation(.easeInOut) { self.viewModel.resetGame() }} label: { Text("New Game") }
         }
-            .padding()
-            .foregroundColor(Color.orange)
     }
 }
 
@@ -41,8 +46,15 @@ struct CardView: View {
                 ).padding(5).opacity(0.4)
                 Text(self.card.content)
                     .font(Font.system(size: fontSize(for: size)))
+                    .rotationEffect(Angle.degrees(card.isMatched ? 360 : 0))
+                    .animation(
+                        card.isMatched
+                        ? Animation.linear(duration: 1).repeatForever(autoreverses: false)
+                        : .default
+                    )
             }
             .cardify(isFaceUp: card.isFaceUp)
+            .transition(AnyTransition.scale)
         }
     }
     
@@ -51,6 +63,8 @@ struct CardView: View {
     private func fontSize (for size: CGSize) -> CGFloat {
         min(size.width, size.height) * 0.7
     }
+    
+    // TODO: константы для рисования
 }
 
 struct ContentView_Previews: PreviewProvider {
