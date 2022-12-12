@@ -35,12 +35,12 @@ struct CardView: View {
         }
     }
     
-    @State private var animateedBonusRemaining: Double = 0
+    @State private var animatedBonusRemaining: Double = 0
     
     private func startBonusTimeAnnimation() {
-        animateedBonusRemaining = card.bonusRemaining
+        animatedBonusRemaining = card.bonusRemaining
         withAnimation(.linear(duration: card.bonusTimeRemaining)) {
-            animateedBonusRemaining = 0
+            animatedBonusRemaining = 0
         }
     }
     
@@ -52,7 +52,7 @@ struct CardView: View {
                     if card.isConsumingBonusTime {
                         Pie(
                             startAngle: Angle.degrees(0 - 90),
-                            endAngle: Angle.degrees(-animateedBonusRemaining*360 - 90),
+                            endAngle: Angle.degrees(-animatedBonusRemaining*360 - 90),
                             clockwise: true
                         ).onAppear {
                             self.startBonusTimeAnnimation()
