@@ -10,13 +10,23 @@
 		720FFAF528E239E300C0DA2F /* MemoryGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720FFAF428E239E300C0DA2F /* MemoryGame.swift */; };
 		721C453128FD404900B2FC37 /* MyGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721C453028FD404900B2FC37 /* MyGrid.swift */; };
 		722EDE15292B5AFD00AC3120 /* Cardify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722EDE14292B5AFD00AC3120 /* Cardify.swift */; };
-		723D4D7E2910F4EF00455435 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723D4D7D2910F4EF00455435 /* Extensions.swift */; };
+		723D4D7E2910F4EF00455435 /* GameExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723D4D7D2910F4EF00455435 /* GameExtensions.swift */; };
 		7265114C290FA86000B847E5 /* GridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7265114B290FA86000B847E5 /* GridLayout.swift */; };
+		727CE9C7294798C600F579CB /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727CE9C6294798C600F579CB /* SettingsViewModel.swift */; };
+		727CE9C92947990000F579CB /* SettingsScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727CE9C82947990000F579CB /* SettingsScreenView.swift */; };
+		727CE9CB294799F400F579CB /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727CE9CA294799F400F579CB /* SettingsModel.swift */; };
+		727CE9CE29479A1B00F579CB /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727CE9CD29479A1B00F579CB /* Theme.swift */; };
+		727CE9D029479AEA00F579CB /* SettingsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727CE9CF29479AEA00F579CB /* SettingsExtensions.swift */; };
+		727CE9D22947A02800F579CB /* Difficalty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727CE9D12947A02800F579CB /* Difficalty.swift */; };
+		727CE9D52947A43B00F579CB /* ThemeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727CE9D42947A43B00F579CB /* ThemeCardView.swift */; };
+		727CE9D72947A61900F579CB /* RadioButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727CE9D62947A61900F579CB /* RadioButtonView.swift */; };
 		72ADA4A828E471C500459A2D /* EmojiMemoryGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72ADA4A728E471C500459A2D /* EmojiMemoryGame.swift */; };
 		72B262E528E2049700FDE4AD /* MemoryGameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B262E428E2049700FDE4AD /* MemoryGameApp.swift */; };
 		72B262E728E2049700FDE4AD /* EmojiMemoryGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B262E628E2049700FDE4AD /* EmojiMemoryGameView.swift */; };
 		72B262E928E2049800FDE4AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72B262E828E2049800FDE4AD /* Assets.xcassets */; };
-		72B262EC28E2049800FDE4AD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72B262EB28E2049800FDE4AD /* Preview Assets.xcassets */; };
+		72D1E2912947ADB500F86F49 /* NavigationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D1E2902947ADB500F86F49 /* NavigationModel.swift */; };
+		72D1E2932947ADD900F86F49 /* NavigationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D1E2922947ADD900F86F49 /* NavigationViewModel.swift */; };
+		72D1E2962947AE2500F86F49 /* Screens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D1E2952947AE2500F86F49 /* Screens.swift */; };
 		72EF7AAF2918F0D20018E71D /* Pie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EF7AAE2918F0D20018E71D /* Pie.swift */; };
 /* End PBXBuildFile section */
 
@@ -24,14 +34,25 @@
 		720FFAF428E239E300C0DA2F /* MemoryGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGame.swift; sourceTree = "<group>"; };
 		721C453028FD404900B2FC37 /* MyGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGrid.swift; sourceTree = "<group>"; };
 		722EDE14292B5AFD00AC3120 /* Cardify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cardify.swift; sourceTree = "<group>"; };
-		723D4D7D2910F4EF00455435 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		723D4D7D2910F4EF00455435 /* GameExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameExtensions.swift; sourceTree = "<group>"; };
 		7265114B290FA86000B847E5 /* GridLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridLayout.swift; sourceTree = "<group>"; };
+		727CE9C6294798C600F579CB /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		727CE9C82947990000F579CB /* SettingsScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreenView.swift; sourceTree = "<group>"; };
+		727CE9CA294799F400F579CB /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
+		727CE9CD29479A1B00F579CB /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		727CE9CF29479AEA00F579CB /* SettingsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsExtensions.swift; sourceTree = "<group>"; };
+		727CE9D12947A02800F579CB /* Difficalty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Difficalty.swift; sourceTree = "<group>"; };
+		727CE9D42947A43B00F579CB /* ThemeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeCardView.swift; sourceTree = "<group>"; };
+		727CE9D62947A61900F579CB /* RadioButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButtonView.swift; sourceTree = "<group>"; };
 		72ADA4A728E471C500459A2D /* EmojiMemoryGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiMemoryGame.swift; sourceTree = "<group>"; };
 		72B262E128E2049700FDE4AD /* MemoryGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemoryGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72B262E428E2049700FDE4AD /* MemoryGameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGameApp.swift; sourceTree = "<group>"; };
 		72B262E628E2049700FDE4AD /* EmojiMemoryGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiMemoryGameView.swift; sourceTree = "<group>"; };
 		72B262E828E2049800FDE4AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		72B262EB28E2049800FDE4AD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		72D1E2902947ADB500F86F49 /* NavigationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationModel.swift; sourceTree = "<group>"; };
+		72D1E2922947ADD900F86F49 /* NavigationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewModel.swift; sourceTree = "<group>"; };
+		72D1E2952947AE2500F86F49 /* Screens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screens.swift; sourceTree = "<group>"; };
 		72EF7AAE2918F0D20018E71D /* Pie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pie.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -46,6 +67,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		727CE9C42947984100F579CB /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				72B262E628E2049700FDE4AD /* EmojiMemoryGameView.swift */,
+				722EDE14292B5AFD00AC3120 /* Cardify.swift */,
+				72EF7AAE2918F0D20018E71D /* Pie.swift */,
+				723D4D7D2910F4EF00455435 /* GameExtensions.swift */,
+				721C453028FD404900B2FC37 /* MyGrid.swift */,
+				720FFAF428E239E300C0DA2F /* MemoryGame.swift */,
+				72ADA4A728E471C500459A2D /* EmojiMemoryGame.swift */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
+		727CE9C52947985A00F579CB /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				727CE9D32947A42D00F579CB /* views */,
+				727CE9CC29479A1100F579CB /* data */,
+				727CE9C6294798C600F579CB /* SettingsViewModel.swift */,
+				727CE9C82947990000F579CB /* SettingsScreenView.swift */,
+				727CE9CA294799F400F579CB /* SettingsModel.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		727CE9CC29479A1100F579CB /* data */ = {
+			isa = PBXGroup;
+			children = (
+				727CE9CD29479A1B00F579CB /* Theme.swift */,
+				727CE9CF29479AEA00F579CB /* SettingsExtensions.swift */,
+				727CE9D12947A02800F579CB /* Difficalty.swift */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+		727CE9D32947A42D00F579CB /* views */ = {
+			isa = PBXGroup;
+			children = (
+				727CE9D42947A43B00F579CB /* ThemeCardView.swift */,
+				727CE9D62947A61900F579CB /* RadioButtonView.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
 		72B262D828E2049700FDE4AD = {
 			isa = PBXGroup;
 			children = (
@@ -65,14 +131,10 @@
 		72B262E328E2049700FDE4AD /* MemoryGame */ = {
 			isa = PBXGroup;
 			children = (
+				72D1E28F2947ADA300F86F49 /* Navigation */,
+				727CE9C52947985A00F579CB /* Settings */,
+				727CE9C42947984100F579CB /* Game */,
 				72B262E428E2049700FDE4AD /* MemoryGameApp.swift */,
-				72B262E628E2049700FDE4AD /* EmojiMemoryGameView.swift */,
-				722EDE14292B5AFD00AC3120 /* Cardify.swift */,
-				72EF7AAE2918F0D20018E71D /* Pie.swift */,
-				723D4D7D2910F4EF00455435 /* Extensions.swift */,
-				721C453028FD404900B2FC37 /* MyGrid.swift */,
-				720FFAF428E239E300C0DA2F /* MemoryGame.swift */,
-				72ADA4A728E471C500459A2D /* EmojiMemoryGame.swift */,
 				72B262E828E2049800FDE4AD /* Assets.xcassets */,
 				72B262EA28E2049800FDE4AD /* Preview Content */,
 				7265114B290FA86000B847E5 /* GridLayout.swift */,
@@ -86,6 +148,24 @@
 				72B262EB28E2049800FDE4AD /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		72D1E28F2947ADA300F86F49 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				72D1E2942947AE1100F86F49 /* data */,
+				72D1E2902947ADB500F86F49 /* NavigationModel.swift */,
+				72D1E2922947ADD900F86F49 /* NavigationViewModel.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		72D1E2942947AE1100F86F49 /* data */ = {
+			isa = PBXGroup;
+			children = (
+				72D1E2952947AE2500F86F49 /* Screens.swift */,
+			);
+			path = data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,7 +226,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				72B262EC28E2049800FDE4AD /* Preview Assets.xcassets in Resources */,
 				72B262E928E2049800FDE4AD /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -158,15 +237,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				727CE9CB294799F400F579CB /* SettingsModel.swift in Sources */,
 				720FFAF528E239E300C0DA2F /* MemoryGame.swift in Sources */,
 				72B262E728E2049700FDE4AD /* EmojiMemoryGameView.swift in Sources */,
 				72EF7AAF2918F0D20018E71D /* Pie.swift in Sources */,
+				727CE9D72947A61900F579CB /* RadioButtonView.swift in Sources */,
+				72D1E2912947ADB500F86F49 /* NavigationModel.swift in Sources */,
+				727CE9CE29479A1B00F579CB /* Theme.swift in Sources */,
+				72D1E2932947ADD900F86F49 /* NavigationViewModel.swift in Sources */,
 				722EDE15292B5AFD00AC3120 /* Cardify.swift in Sources */,
+				727CE9D52947A43B00F579CB /* ThemeCardView.swift in Sources */,
 				72B262E528E2049700FDE4AD /* MemoryGameApp.swift in Sources */,
+				72D1E2962947AE2500F86F49 /* Screens.swift in Sources */,
+				727CE9C7294798C600F579CB /* SettingsViewModel.swift in Sources */,
+				727CE9D22947A02800F579CB /* Difficalty.swift in Sources */,
 				7265114C290FA86000B847E5 /* GridLayout.swift in Sources */,
 				72ADA4A828E471C500459A2D /* EmojiMemoryGame.swift in Sources */,
+				727CE9C92947990000F579CB /* SettingsScreenView.swift in Sources */,
 				721C453128FD404900B2FC37 /* MyGrid.swift in Sources */,
-				723D4D7E2910F4EF00455435 /* Extensions.swift in Sources */,
+				723D4D7E2910F4EF00455435 /* GameExtensions.swift in Sources */,
+				727CE9D029479AEA00F579CB /* SettingsExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

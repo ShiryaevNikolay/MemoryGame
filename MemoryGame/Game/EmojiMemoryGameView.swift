@@ -9,8 +9,13 @@ import SwiftUI
 
 struct EmojiMemoryGameView: View {
     @ObservedObject var viewModel: EmojiMemoryGame
+    @ObservedObject var navigationViewModel: NavigationViewModel
+    
     var body: some View {
         VStack {
+            Button { withAnimation(.easeInOut) {
+                self.navigationViewModel.navigateTo(Screens.settings) }
+            } label: { Text("Settings") }
             MyGrid(viewModel.cards) { card in
                 CardView(card: card).onTapGesture {
                     withAnimation(.linear(duration: 0.75)) {
@@ -20,14 +25,15 @@ struct EmojiMemoryGameView: View {
                 .padding(5)
             }
                 .padding()
-                .foregroundColor(Color.orange)
+                .foregroundColor(Color(viewModel.theme.cardColor))
             Button { withAnimation(.easeInOut) { self.viewModel.resetGame() }} label: { Text("New Game") }
         }
+        .background(Color(viewModel.theme.backgroundColor))
     }
 }
 
 struct CardView: View {
-    var card: MemoryGame<String>.Card
+    var card: EmojiCard
     
     var body: some View {
         GeometryReader { geometry in
@@ -67,7 +73,7 @@ struct CardView: View {
                 }
                 .padding(5)
                 .opacity(0.4)
-                .transition(AnyTransition.identity) // AnyTransition.scale
+//                .transition(AnyTransition.identity) // AnyTransition.scale
                 Text(self.card.content)
                     .font(Font.system(size: fontSize(for: size)))
                     .rotationEffect(Angle.degrees(card.isMatched ? 360 : 0))
@@ -91,10 +97,10 @@ struct CardView: View {
     // TODO: константы для рисования
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        let game = EmojiMemoryGame()
-        game.choose(card: game.cards[0])
-        return EmojiMemoryGameView(viewModel: game)
-    }
-}
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        let game = EmojiMemoryGame()
+//        game.choose(card: game.cards[0])
+//        return EmojiMemoryGameView(viewModel: game)
+//    }
+//}

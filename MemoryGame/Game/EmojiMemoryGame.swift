@@ -7,11 +7,18 @@
 
 import Foundation
 
+typealias EmojiCard = MemoryGame<String>.Card
+
 // ViewModel
 class EmojiMemoryGame: ObservableObject {
-    // Иммет смысл написать typealias для MemoryGame<String>
     
     @Published private var model: MemoryGame<String> = EmojiMemoryGame.createMemoryGame()
+    
+    var theme: Theme
+    
+    init(theme: Themes) {
+        self.theme = theme.getTheme()
+    }
     
     private static func createMemoryGame() -> MemoryGame<String> {
         let emojis = ["👾", "🚕", "📕"]
@@ -22,13 +29,13 @@ class EmojiMemoryGame: ObservableObject {
     
     // MARK: - Access to the Model
     
-    var cards: Array<MemoryGame<String>.Card> {
+    var cards: Array<EmojiCard> {
         model.cards // если одна строчка, то можно убрать return
     }
     
     // MARK: - Intent(s)
     
-    func choose(card: MemoryGame<String>.Card) {
+    func choose(card: EmojiCard) {
         model.choose(card: card)
     }
     

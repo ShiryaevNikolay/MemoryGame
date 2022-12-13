@@ -9,10 +9,28 @@ import SwiftUI
 
 @main
 struct MemoryGameApp: App {
+    @ObservedObject var navigationViewModel: NavigationViewModel = NavigationViewModel(
+        model: NavigationModel()
+    )
+    @ObservedObject var settingsViewModel: SettingsViewModel = SettingsViewModel(
+        model: SettingsModel()
+    )
+    
     var body: some Scene {
         WindowGroup {
-            let game = EmojiMemoryGame()
-            EmojiMemoryGameView(viewModel: game)
+            
+            if navigationViewModel.currentScreen == Screens.game {
+                let game = EmojiMemoryGame(theme: settingsViewModel.theme)
+                EmojiMemoryGameView(
+                    viewModel: game,
+                    navigationViewModel: navigationViewModel
+                )
+            } else {
+                SettingsScreenView(
+                    viewModel: settingsViewModel,
+                    navigationViewModel: navigationViewModel
+                )
+            }
         }
     }
 }
