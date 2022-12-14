@@ -24,12 +24,11 @@ struct EmojiMemoryGameView: View {
                 }
                 .padding(5)
             }
-                .padding()
-                .foregroundColor(Color(viewModel.theme.cardColor))
-            Button {
-                withAnimation(.easeInOut) { self.viewModel.resetGame() }
-            } label: { Text("Новая игра") }
+            .padding(.vertical)
+            .foregroundColor(Color(viewModel.theme.cardColor))
+            GameControlButtons(viewModel: viewModel)
         }
+        .padding()
         .background(Color(viewModel.theme.backgroundColor))
     }
 }
@@ -97,6 +96,23 @@ struct CardView: View {
     }
     
     // TODO: константы для рисования
+}
+
+struct GameControlButtons: View {
+    
+    var viewModel: EmojiMemoryGame
+    
+    var body: some View {
+        HStack() {
+            Button {
+                withAnimation(.easeInOut) { self.viewModel.resetGame() }
+            } label: { Text("Новая игра") }
+            Spacer()
+            Button {
+                withAnimation(.easeInOut) { self.viewModel.shuffleCards() }
+            } label: { Text("Перемешать карты") }
+        }
+    }
 }
 
 //struct ContentView_Previews: PreviewProvider {
