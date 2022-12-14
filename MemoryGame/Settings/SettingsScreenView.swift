@@ -13,30 +13,34 @@ struct SettingsScreenView: View {
     
     var body: some View {
         VStack {
-            SubtitleView("Тема")
-            ThemesGridView(selectedTheme: viewModel.theme) { theme in
-                viewModel.changeTheme(to: theme)
-            }
-                .frame(height: 200)
-            Button {
-                withAnimation(.easeInOut) {
-                    self.viewModel.setRandomTheme()
+            ScrollView {
+                SubtitleView("Тема")
+                    .padding(.top)
+                ThemesGridView(selectedTheme: viewModel.theme) { theme in
+                    viewModel.changeTheme(to: theme)
                 }
-            } label: { Text("Случайная тема") }
-            Spacer()
-                .frame(height: 20)
-            SubtitleView("Уровень сложности")
-            DifficaltyPickerView(
-                selectedDifficalty: viewModel.difficalty
-            ) { difficalty in
-                viewModel.changeDifficalty(to: difficalty)
+                .padding()
+                .frame(height: 200)
+                Button {
+                    withAnimation(.easeInOut) {
+                        self.viewModel.setRandomTheme()
+                    }
+                } label: { Text("Случайная тема") }
+                Spacer()
+                    .frame(height: 20)
+                SubtitleView("Уровень сложности")
+                DifficaltyPickerView(
+                    selectedDifficalty: viewModel.difficalty
+                ) { difficalty in
+                    viewModel.changeDifficalty(to: difficalty)
+                }
+                Spacer()
             }
-            Spacer()
             Button {
                 withAnimation(.easeInOut) { navigationViewModel.navigateTo(Screens.game) }
             } label: { Text("Играть") }
+                .padding(.vertical)
         }
-        .padding()
         .background(Color(viewModel.theme.getTheme().backgroundColor))
     }
 }
