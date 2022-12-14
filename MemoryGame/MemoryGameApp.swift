@@ -20,7 +20,10 @@ struct MemoryGameApp: App {
         WindowGroup {
             
             if navigationViewModel.currentScreen == Screens.game {
-                let game = EmojiMemoryGame(theme: settingsViewModel.theme)
+                let game = EmojiMemoryGame(
+                    theme: settingsViewModel.theme,
+                    difficalty: settingsViewModel.difficalty
+                )
                 EmojiMemoryGameView(
                     viewModel: game,
                     navigationViewModel: navigationViewModel

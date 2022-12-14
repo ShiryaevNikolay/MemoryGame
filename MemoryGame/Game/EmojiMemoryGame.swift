@@ -14,16 +14,58 @@ class EmojiMemoryGame: ObservableObject {
     
     @Published private var model: MemoryGame<String> = EmojiMemoryGame.createMemoryGame()
     
-    var theme: Theme
-    
-    init(theme: Themes) {
-        self.theme = theme.getTheme()
+    private var difficalty: Difficalties
+    private var themes: Themes
+    var theme: Theme {
+        themes.getTheme()
     }
     
-    private static func createMemoryGame() -> MemoryGame<String> {
-        let emojis = ["👾", "🚕", "📕"]
+    private static let emojisFirstTheme = [
+        "🩼", "🚲", "🗿", "💻", "🧲", "⚔️",
+        "🛠", "🦠", "🔊", "🍑", "🍌", "🥥",
+        "🍕", "🌮", "🍔", "🍊", "🏓", "🎮",
+        "✈️", "🗺", "🏩", "⛩", "💾", "💸"
+    ]
+    private static let emojisSecondTheme = [
+        "📽", "🕹", "🖥", "💽", "🗜", "📸",
+        "📟", "🎞", "🎚", "🧭", "🎛", "📡",
+        "💡", "🖲", "🕯", "🧯", "💶", "🪙",
+        "💰", "🪜", "⚙️", "🪤", "🧱", "🔫"
+    ]
+    private static let emojisThirdTheme = [
+        "💣", "🛡", "🪓", "🔪", "⚰️", "🪬",
+        "📿", "🧿", "🔬", "💈", "⚗️", "🏺",
+        "🩹", "🧬", "🧪", "🧺", "🧻", "🛁",
+        "🧼", "🧽", "🔑", "📦", "📭", "✏️"
+    ]
+    
+    init(theme: Themes, difficalty: Difficalties) {
+        self.themes = theme
+        self.difficalty = difficalty
+        self.model = EmojiMemoryGame.createMemoryGame(
+            theme: self.themes,
+            difficalty: self.difficalty
+        )
+    }
+    
+    private static func createMemoryGame(
+        theme: Themes = Themes.firstTheme,
+        difficalty: Difficalties = Difficalties.easy
+    ) -> MemoryGame<String> {
+        let emojis = getEmojis(theme).shuffled().prefix(difficalty.rawValue)
         return MemoryGame<String>(numberOfPairOfCards: emojis.count) { pairIndex in
             return emojis[pairIndex]
+        }
+    }
+    
+    private static func getEmojis(_ theme: Themes) -> Array<String> {
+        switch theme {
+        case .firstTheme:
+            return emojisFirstTheme
+        case .secondTheme:
+            return emojisSecondTheme
+        case .thirdTheme:
+            return emojisThirdTheme
         }
     }
     
@@ -44,7 +86,10 @@ class EmojiMemoryGame: ObservableObject {
     }
     
     func resetGame() {
-        model = EmojiMemoryGame.createMemoryGame()
+        model = EmojiMemoryGame.createMemoryGame(
+            theme: self.themes,
+            difficalty: self.difficalty
+        )
     }
     
     func shuffleCards() {
