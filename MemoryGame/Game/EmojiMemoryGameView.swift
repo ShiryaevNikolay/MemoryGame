@@ -15,7 +15,7 @@ struct EmojiMemoryGameView: View {
         VStack {
             Button { withAnimation(.easeInOut) {
                 self.navigationViewModel.navigateTo(Screens.settings) }
-            } label: { Text("Settings") }
+            } label: { Text("Настройки") }
             MyGrid(viewModel.cards) { card in
                 CardView(card: card).onTapGesture {
                     withAnimation(.linear(duration: 0.75)) {
@@ -26,7 +26,9 @@ struct EmojiMemoryGameView: View {
             }
                 .padding()
                 .foregroundColor(Color(viewModel.theme.cardColor))
-            Button { withAnimation(.easeInOut) { self.viewModel.resetGame() }} label: { Text("New Game") }
+            Button {
+                withAnimation(.easeInOut) { self.viewModel.resetGame() }
+            } label: { Text("Новая игра") }
         }
         .background(Color(viewModel.theme.backgroundColor))
     }
