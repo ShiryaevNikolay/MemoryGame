@@ -36,7 +36,9 @@ class SettingsViewModel: ObservableObject {
     }
     
     func setRandomTheme() {
-        let randomTheme = Themes.allCases.randomElement()
+        let randomTheme = Themes.allCases.filter { theme in
+            theme != self.theme
+        }.randomElement()
         changeTheme(to: randomTheme!)
     }
 }
