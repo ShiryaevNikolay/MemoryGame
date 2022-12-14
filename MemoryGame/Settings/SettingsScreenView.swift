@@ -18,6 +18,11 @@ struct SettingsScreenView: View {
                 viewModel.changeTheme(to: theme)
             }
                 .frame(height: 200)
+            Button {
+                withAnimation(.easeInOut) {
+                    self.viewModel.setRandomTheme()
+                }
+            } label: { Text("Случайная тема") }
             Spacer()
                 .frame(height: 20)
             SubtitleView("Уровень сложности")

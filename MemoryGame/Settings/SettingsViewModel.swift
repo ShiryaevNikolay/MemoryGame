@@ -34,4 +34,9 @@ class SettingsViewModel: ObservableObject {
     func changeDifficalty(to selectedDifficalty: Difficalties) {
         model.setDifficalty(selectedDifficalty)
     }
+    
+    func setRandomTheme() {
+        let randomTheme = Themes.allCases.randomElement()
+        changeTheme(to: randomTheme!)
+    }
 }
