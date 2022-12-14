@@ -12,7 +12,7 @@ typealias EmojiCard = MemoryGame<String>.Card
 // ViewModel
 class EmojiMemoryGame: ObservableObject {
     
-    @Published private var model: MemoryGame<String> = EmojiMemoryGame.createMemoryGame()
+    @Published private var model: MemoryGame<String>
     
     private var difficalty: Difficalties
     private var themes: Themes
