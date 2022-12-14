@@ -44,7 +44,13 @@ struct HeaderGameView: View {
     
     var body: some View {
         HStack {
-            Text("Счет: \(viewModel.score)")
+            VStack(alignment: .leading) {
+                Button { withAnimation(.easeInOut) {
+                    self.viewModel.useHint() }
+                } label: { Text("Подсказка") }
+                    .disabled(!viewModel.isEnabledHintButton)
+                Text("Счет: \(viewModel.score)")
+            }
             Spacer()
             VStack(alignment: .trailing) {
                 Button { withAnimation(.easeInOut) {

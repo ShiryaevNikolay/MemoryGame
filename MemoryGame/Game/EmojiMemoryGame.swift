@@ -79,6 +79,10 @@ class EmojiMemoryGame: ObservableObject {
         model.score
     }
     
+    var isEnabledHintButton: Bool {
+        model.isEnabledHintButton
+    }
+    
     // MARK: - Intent(s)
     
     func choose(card: EmojiCard) {
@@ -94,5 +98,18 @@ class EmojiMemoryGame: ObservableObject {
     
     func shuffleCards() {
         model.shuffleCards()
+    }
+    
+    func useHint() {
+        model.setEnabledHintButton(isEnabled: false)
+        model.useHint()
+        model.showCards()
+        let delayHint = 1.0
+        DispatchQueue.main.asyncAfter(deadline: .now() + delayHint) {
+            self.model.hideCards()
+            if self.model.hintsCount != 0 {
+                self.model.setEnabledHintButton(isEnabled: true)
+            }
+        }
     }
 }
