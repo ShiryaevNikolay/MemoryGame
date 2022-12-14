@@ -33,6 +33,10 @@ class EmojiMemoryGame: ObservableObject {
         model.cards // если одна строчка, то можно убрать return
     }
     
+    var score: Int {
+        model.score
+    }
+    
     // MARK: - Intent(s)
     
     func choose(card: EmojiCard) {

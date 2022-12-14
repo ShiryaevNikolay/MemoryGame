@@ -13,9 +13,10 @@ struct EmojiMemoryGameView: View {
     
     var body: some View {
         VStack {
-            Button { withAnimation(.easeInOut) {
-                self.navigationViewModel.navigateTo(Screens.settings) }
-            } label: { Text("Настройки") }
+            HeaderGameView(
+                viewModel: viewModel,
+                navigationViewModel: navigationViewModel
+            )
             MyGrid(viewModel.cards) { card in
                 CardView(card: card).onTapGesture {
                     withAnimation(.linear(duration: 0.75)) {
@@ -33,6 +34,31 @@ struct EmojiMemoryGameView: View {
     }
 }
 
+/**
+ Содержит счет, название темы и кнопку настроки
+ */
+struct HeaderGameView: View {
+    
+    @ObservedObject var viewModel: EmojiMemoryGame
+    @ObservedObject var navigationViewModel: NavigationViewModel
+    
+    var body: some View {
+        HStack {
+            Text("Счет: \(viewModel.score)")
+            Spacer()
+            VStack(alignment: .trailing) {
+                Button { withAnimation(.easeInOut) {
+                    self.navigationViewModel.navigateTo(Screens.settings) }
+                } label: { Text("Настройки") }
+                Text("Тема: \(viewModel.theme.name)")
+            }
+        }
+    }
+}
+
+/**
+ Сетка с картами
+ */
 struct CardView: View {
     var card: EmojiCard
     
@@ -98,9 +124,12 @@ struct CardView: View {
     // TODO: константы для рисования
 }
 
+/**
+ Кнопки начала новой игры и перемешивания карт
+ */
 struct GameControlButtons: View {
     
-    var viewModel: EmojiMemoryGame
+    @ObservedObject var viewModel: EmojiMemoryGame
     
     var body: some View {
         HStack() {
