@@ -18,8 +18,8 @@ struct MemoryGameApp: App {
     
     var body: some Scene {
         WindowGroup {
-            
-            if navigationViewModel.currentScreen == Screens.game {
+            switch navigationViewModel.currentScreen {
+            case Screens.game:
                 let game = EmojiMemoryGame(
                     theme: settingsViewModel.theme,
                     difficalty: settingsViewModel.difficalty
@@ -28,10 +28,17 @@ struct MemoryGameApp: App {
                     viewModel: game,
                     navigationViewModel: navigationViewModel
                 )
-            } else {
+            case Screens.settings:
                 SettingsScreenView(
                     viewModel: settingsViewModel,
                     navigationViewModel: navigationViewModel
+                )
+            case Screens.rules:
+                let rules = GameRulesViewModel()
+                GameRulesScreenView(
+                    viewModel: rules,
+                    navigationViewModel: navigationViewModel,
+                    settingsViewModel: settingsViewModel
                 )
             }
         }

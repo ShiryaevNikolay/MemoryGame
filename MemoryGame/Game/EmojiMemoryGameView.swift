@@ -50,6 +50,16 @@ struct HeaderGameView: View {
                 } label: { Text("Подсказка") }
                     .disabled(!viewModel.isEnabledHintButton)
                 Text("Счет: \(viewModel.score)")
+                Button {
+                    withAnimation(.easeInOut) {
+                        self.navigationViewModel.navigateTo(Screens.rules)
+                    }
+                } label: {
+                    HStack {
+                        Image(systemName: "info")
+                        Text("Правила игры")
+                    }
+                }
             }
             Spacer()
             VStack(alignment: .trailing) {

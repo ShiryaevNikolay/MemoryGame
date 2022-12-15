@@ -27,6 +27,9 @@
 		72D1E2912947ADB500F86F49 /* NavigationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D1E2902947ADB500F86F49 /* NavigationModel.swift */; };
 		72D1E2932947ADD900F86F49 /* NavigationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D1E2922947ADD900F86F49 /* NavigationViewModel.swift */; };
 		72D1E2962947AE2500F86F49 /* Screens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D1E2952947AE2500F86F49 /* Screens.swift */; };
+		72D20407294B7CDB00080A14 /* GameRulesScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D20406294B7CDB00080A14 /* GameRulesScreenView.swift */; };
+		72D20409294B7D0900080A14 /* GameRulesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D20408294B7D0900080A14 /* GameRulesViewModel.swift */; };
+		72D2040B294B7D7A00080A14 /* GameRulesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D2040A294B7D7A00080A14 /* GameRulesModel.swift */; };
 		72EF7AAF2918F0D20018E71D /* Pie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EF7AAE2918F0D20018E71D /* Pie.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +56,9 @@
 		72D1E2902947ADB500F86F49 /* NavigationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationModel.swift; sourceTree = "<group>"; };
 		72D1E2922947ADD900F86F49 /* NavigationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewModel.swift; sourceTree = "<group>"; };
 		72D1E2952947AE2500F86F49 /* Screens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screens.swift; sourceTree = "<group>"; };
+		72D20406294B7CDB00080A14 /* GameRulesScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRulesScreenView.swift; sourceTree = "<group>"; };
+		72D20408294B7D0900080A14 /* GameRulesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRulesViewModel.swift; sourceTree = "<group>"; };
+		72D2040A294B7D7A00080A14 /* GameRulesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRulesModel.swift; sourceTree = "<group>"; };
 		72EF7AAE2918F0D20018E71D /* Pie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pie.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -131,6 +137,7 @@
 		72B262E328E2049700FDE4AD /* MemoryGame */ = {
 			isa = PBXGroup;
 			children = (
+				72D20405294B7CBC00080A14 /* GameRules */,
 				72D1E28F2947ADA300F86F49 /* Navigation */,
 				727CE9C52947985A00F579CB /* Settings */,
 				727CE9C42947984100F579CB /* Game */,
@@ -166,6 +173,16 @@
 				72D1E2952947AE2500F86F49 /* Screens.swift */,
 			);
 			path = data;
+			sourceTree = "<group>";
+		};
+		72D20405294B7CBC00080A14 /* GameRules */ = {
+			isa = PBXGroup;
+			children = (
+				72D20406294B7CDB00080A14 /* GameRulesScreenView.swift */,
+				72D20408294B7D0900080A14 /* GameRulesViewModel.swift */,
+				72D2040A294B7D7A00080A14 /* GameRulesModel.swift */,
+			);
+			path = GameRules;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,6 +256,7 @@
 			files = (
 				727CE9CB294799F400F579CB /* SettingsModel.swift in Sources */,
 				720FFAF528E239E300C0DA2F /* MemoryGame.swift in Sources */,
+				72D20407294B7CDB00080A14 /* GameRulesScreenView.swift in Sources */,
 				72B262E728E2049700FDE4AD /* EmojiMemoryGameView.swift in Sources */,
 				72EF7AAF2918F0D20018E71D /* Pie.swift in Sources */,
 				727CE9D72947A61900F579CB /* RadioButtonView.swift in Sources */,
@@ -249,11 +267,13 @@
 				727CE9D52947A43B00F579CB /* ThemeCardView.swift in Sources */,
 				72B262E528E2049700FDE4AD /* MemoryGameApp.swift in Sources */,
 				72D1E2962947AE2500F86F49 /* Screens.swift in Sources */,
+				72D2040B294B7D7A00080A14 /* GameRulesModel.swift in Sources */,
 				727CE9C7294798C600F579CB /* SettingsViewModel.swift in Sources */,
 				727CE9D22947A02800F579CB /* Difficalty.swift in Sources */,
 				7265114C290FA86000B847E5 /* GridLayout.swift in Sources */,
 				72ADA4A828E471C500459A2D /* EmojiMemoryGame.swift in Sources */,
 				727CE9C92947990000F579CB /* SettingsScreenView.swift in Sources */,
+				72D20409294B7D0900080A14 /* GameRulesViewModel.swift in Sources */,
 				721C453128FD404900B2FC37 /* MyGrid.swift in Sources */,
 				723D4D7E2910F4EF00455435 /* GameExtensions.swift in Sources */,
 				727CE9D029479AEA00F579CB /* SettingsExtensions.swift in Sources */,

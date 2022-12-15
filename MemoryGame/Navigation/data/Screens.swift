@@ -10,4 +10,5 @@ import Foundation
 enum Screens {
     case settings
     case game
+    case rules
 }
