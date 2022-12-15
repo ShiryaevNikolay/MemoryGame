@@ -101,15 +101,11 @@ class EmojiMemoryGame: ObservableObject {
     }
     
     func useHint() {
-        model.setEnabledHintButton(isEnabled: false)
         model.useHint()
         model.showCards()
         let delayHint = 1.0
         DispatchQueue.main.asyncAfter(deadline: .now() + delayHint) {
             self.model.hideCards()
-            if self.model.hintsCount != 0 {
-                self.model.setEnabledHintButton(isEnabled: true)
-            }
         }
     }
 }

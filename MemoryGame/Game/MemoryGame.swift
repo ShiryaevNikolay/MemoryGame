@@ -12,7 +12,6 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
     
     private(set) var cards: Array<Card>
     private(set) var score: Int
-    private(set) var hintsCount: Int
     private(set) var isEnabledHintButton: Bool = true
     
     private var indexOfOneAndOnlyFaceUpCard: Int? {
@@ -25,7 +24,6 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
     }
     
     private let initScore: Int = 0
-    private let initHintsCount: Int = 5
     
     mutating func choose(card: Card) {
         if let choosenIndex = cards.firstIndex(matching: card), !cards[choosenIndex].isFaceUp, !cards[choosenIndex].isMatched {
@@ -53,8 +51,8 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
     }
     
     mutating func useHint() {
-        hintsCount -= 1
         score -= 5
+        isEnabledHintButton = false
     }
     
     mutating func showCards() {
@@ -63,10 +61,6 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
     
     mutating func hideCards() {
         changeFaceUpExpectForMatchedCards(isFaceUp: false)
-    }
-    
-    mutating func setEnabledHintButton(isEnabled: Bool) {
-        isEnabledHintButton = isEnabled
     }
     
     private mutating func changeFaceUpExpectForMatchedCards(isFaceUp: Bool) {
@@ -79,7 +73,6 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
     
     init(numberOfPairOfCards: Int, cardContentFactory: (Int) -> CardContent) {
         score = initScore
-        hintsCount = initHintsCount
         cards = Array<Card>()
         for pairIndex in 0..<numberOfPairOfCards {
             let content = cardContentFactory(pairIndex)
